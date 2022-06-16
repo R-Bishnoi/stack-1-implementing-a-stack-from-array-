@@ -1,0 +1,93 @@
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define N 5
+
+int mystack[N];
+int top=-1;
+
+
+void push(){
+    int x;
+    cout<<"what you want to push in stack \n";
+    cin>>x;
+    
+    if(top>=N-1)cout<<"stack - Overflow"<<endl;
+    else{
+        top++;
+        mystack[top]=x;
+    }
+}
+
+
+
+
+void pop(){
+    if(top==-1)cout<<"stack - underfolw"<<endl;
+    else{
+        cout<<mystack[top]<<" poped successfuly "<<endl;
+        top--;
+    }
+}
+
+
+
+void peek(){
+    if(top==-1)cout<<"stack is empty "<<endl;
+    
+    else{
+        cout<<mystack[top]<<" is the peek element of stack "<<endl;
+    }
+}
+
+
+
+void display(){
+    if(top==-1)cout<<"stack is empty "<<endl;
+    
+    else{
+        
+        for(int i=top;i>=0;i--)cout<<mystack[i]<<" ";
+    }
+    cout<<endl;
+}
+
+
+
+
+
+int main(){
+   
+
+int ch;
+
+cout<<"select appropriate choice :"<<endl;
+
+while(1){
+
+cout<<"0 - exit_now\n"<<"1 - push \n"<<"2 - pop \n"<<"3 - peek \n"<<"4 - display \n"<<endl;
+
+cin>>ch;
+
+switch(ch){
+    case 0: exit(0);
+    
+    case 1: push();
+            break;
+            
+     case 2: pop();
+            break;        
+    
+     case 3: peek();
+            break;
+            
+     case 4: display();
+            break;
+    
+}
+
+}
+
+    return 0;
+}
